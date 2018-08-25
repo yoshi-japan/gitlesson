@@ -1,3 +1,1 @@
 konnitiha 
-konnbanha 
-okaerinasai
