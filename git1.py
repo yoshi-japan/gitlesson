@@ -1,2 +1,3 @@
-pritn("hello")
+print("hello")
+print("こんにちは")
 
