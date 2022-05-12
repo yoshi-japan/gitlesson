@@ -36,25 +36,40 @@
         return dupList;
     }
 
+    function duplicateSortByNameAccending(srcList){
+        let dupList = cloneFoodObjectList(srcList); 
+        let tmp;
+        for (var i = 0; i < dupList.length - 1;i++){
+            for (var j = i + 1; j < dupList.length; j++){
+                if (dupList[i].name > dupList[j].name){
+                    tmp = dupList[i];
+                    dupList[i] = dupList[j];
+                    dupList[j] = tmp;
+                }
+            }
+        }
+        return dupList;
+    }
+
     let foodlist = [
         {
         food_id:1,
-        food_name:'a',
+        food_name:'azx',
         calorie:100
         },
                 {
         food_id:2,
-        food_name:'b',
+        food_name:'bcd',
         calorie:10
         },
                 {
         food_id:3,
-        food_name:'c',
+        food_name:'bcde',
         calorie:803
         },
                 {
         food_id:5,
-        food_name:'d',
+        food_name:'bbzxsw',
         calorie:50
         },
         ];
@@ -63,6 +78,8 @@
     let ary = duplicateSortByCalorieAccending(foodlist);
     console.log(ary);
     console.log(foodlist);
+    console.log(duplicateSortByNameAccending(foodlist));
+    console.log(duplicateSortByNameAccending(foodlist).reverse());
 
 </script>
 <body>
