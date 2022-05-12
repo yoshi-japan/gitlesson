@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+    function cloneFoodObjectList(foodObjectList){
+        let clonedList = new Array();
+        for (var i = 0; i < foodObjectList.length; i++){
+            let foodObject = {
+                food_id:foodObjectList[i].food_id,
+                food_name:foodObjectList[i].food_name,
+                calorie:foodObjectList[i].calorie
+            }
+            clonedList.push(foodObject);
+        }
+        return clonedList;
+    }
+
+    function duplicateSortByCalorieAccending(srcList){
+        let dupList = cloneFoodObjectList(srcList); 
+        let tmp;
+        for (var i = 0; i < dupList.length - 1;i++){
+            for (var j = i + 1; j < srcList.length; j++){
+                if (dupList[i].calorie > dupList[j].calorie){
+                    tmp = dupList[i];
+                    dupList[i] = dupList[j];
+                    dupList[j] = tmp;
+                }
+            }
+        }
+        return dupList;
+    }
+
+    let foodlist = [
+        {
+        food_id:1,
+        food_name:'a',
+        calorie:100
+        },
+                {
+        food_id:2,
+        food_name:'b',
+        calorie:10
+        },
+                {
+        food_id:3,
+        food_name:'c',
+        calorie:803
+        },
+                {
+        food_id:5,
+        food_name:'d',
+        calorie:50
+        },
+        ];
+
+
+    let ary = duplicateSortByCalorieAccending(foodlist);
+    console.log(ary);
+    console.log(foodlist);
+
+</script>
+<body>
+    
+</body>
+</html>
